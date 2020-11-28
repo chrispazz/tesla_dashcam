@@ -1,4 +1,4 @@
-FROM timrettop/ffmpeg-alpine12:4.0-buildstage as build-stage
+FROM jrottenberg/ffmpeg:4.1-vaapi as build-stage
 FROM python:3-alpine
 
 COPY --from=build-stage /tmp/fakeroot/bin /usr/local/bin
