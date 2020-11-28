@@ -1,5 +1,5 @@
-FROM jrottenberg/ffmpeg:4.1-vaapi as build-stage
-FROM python:3-alpine
+FROM linuxserver/ffmpeg
+FROM python:3.8-alpine
 
 WORKDIR /usr/src/app/tesla_dashcam
 
@@ -14,7 +14,7 @@ RUN pip install -r requirements.txt
 # Enable Logs to show on run
 ENV PYTHONUNBUFFERED=true 
 # Provide a default timezone
-ENV TZ=America/New_York
+ENV TZ=Europe/Rome
 # Add intel drivers
 ENV LD_LIBRARY_PATH=/opt/intel/mediasdk/lib64:/lib
 
